@@ -20,7 +20,7 @@
   }
 }
 
-       window.searchStudentsResult = function() {
+       searchStudentsResult = function() {
             const dobInput = document.getElementById("dob").value;
             const regNoInput = document.getElementById("regNo").value.trim();
 
