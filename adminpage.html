@@ -27,7 +27,7 @@
       const name = document.getElementById("student-name").value;
 
       const formData = new FormData();
-      formData.append("file", fileInput.files[0]); // attach file
+      formData.append("file[]", fileInput.files[0]); // attach file
       formData.append("studentRoll", roll);
       formData.append("studentName", name);
 
