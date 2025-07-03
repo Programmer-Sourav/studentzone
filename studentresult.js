@@ -20,8 +20,8 @@
     return null;
   }
 }
-
-       window.searchStudentsResult = async function () {
+     /**  window.searchStudentsResult = */
+      async function searchStudentsResult () {
             const dobInput = document.getElementById("dob").value;
             const regNoInput = document.getElementById("regNo").value.trim();
 
