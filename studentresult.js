@@ -20,11 +20,11 @@
   }
 }
 
-       searchStudentsResult = function() {
+       window.searchStudentsResult = async function() {
             const dobInput = document.getElementById("dob").value;
             const regNoInput = document.getElementById("regNo").value.trim();
 
-           const result =  getStudentsMarksheetAndCertificates(regNoInput, dobInput)
+           const result = await getStudentsMarksheetAndCertificates(regNoInput, dobInput)
            console.log(5555, result)
             // const result = studentsData.find(
             //     student => student.dob === dobInput && student.registrationNo === regNoInput
