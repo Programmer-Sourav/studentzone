@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel</title>
+</head>
+<body>
+  <h1>Admin Panel</h1>
+  <p>Upload Students Marksheet</p>
+
+  <form enctype="multipart/form-data" id="upload-form">
+    <input type="file" id="file-upload"  name="file[]" multiple required />
+    <input type="text" id="student-roll" name="roll" placeholder="Roll No" required />
+    <input type="text" id="student-name" name="name" placeholder="Students Name" required />
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const form = document.getElementById("upload-form");
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault(); // Prevent default form submission
+
+      const fileInput = document.getElementById("file-upload");
+      const roll = document.getElementById("student-roll").value;
+      const name = document.getElementById("student-name").value;
+
+      const formData = new FormData();
+      formData.append("file", fileInput.files[0]); // attach file
+      formData.append("studentRoll", roll);
+      formData.append("studentName", name);
+
+      try {
+        const response = await fetch("https://www.travelsawari.com/index_course.php/upload_marksheets_and_certificates", {
+          method: "POST",
+          body: formData, // Send as multipart/form-data
+        });
+
+        const data = await response.json();
+        console.log("Upload successful:", data);
+      } catch (error) {
+        console.error("Error uploading:", error);
+      }
+    });
+  </script>
+</body>
+</html>

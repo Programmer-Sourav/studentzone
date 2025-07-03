@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet"  href="/stylesheet.css" />
+    <title>Student's Result</title>
+</head>
+<body>
+   <div class="resultbody">
+       <h1 class="mp-16 text-f-1">Students Results Online View</h1>
+        <div class="form-group">
+        <label class="mp-16 text-font">Enter Your Registration Number:
+            <input type="text" id="regNo" placeholder="Enter Registration Number" class="input-box mp-16"/>
+        </label>
+        </div>
+          <div class="form-group">
+        <label class="mp-16 text-font">Enter Your Date Of Birth:
+            <input type="date" id="dob" placeholder="Enter Your Date Of Birth" class="input-box mp-16" />
+        </label>
+        </div>
+        <button onclick="searchStudentsResult()" class="btn-sbm">Search</button>
+    </div>
+    <div id="result" class="resultbody">
+    <script src="/studentresult.js" type="module"/>
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+.resultbody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* aligns all form groups to the left */
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.text-font {
+    width: 512px; /* fixed width ensures vertical alignment */
+    padding: 8px;
+    font-size: 18px;
+    margin-right: 8px;
+}
+
+.input-box {
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 8px;
+    padding: 0 8px;
+}
+
+.text-f-1{
+    color: rgb(95, 95, 218);
+    font-weight: 700;
+}
+.btn-sbm{
+     padding: 8px;
+     margin: 16 16 16 16;
+     font-size: 18px;
+     width: 128px;
+     background-color: rgb(95, 95, 218);
+     height: 40px;
+     color: white;
+     border: none;
+     border-radius: 8px;
+}
