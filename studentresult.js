@@ -13,7 +13,6 @@
     });
 
     const data = await response.json();
-    console.log("5555", data.response.data[0]);
     return data.response.data[0];
   } catch (error) {
     console.error("Error", error);
@@ -21,7 +20,7 @@
   }
 }
 
-       window.searchStudentsResult = async function searchStudentsResult() {
+       window.searchStudentsResult = async function() {
             const dobInput = document.getElementById("dob").value;
             const regNoInput = document.getElementById("regNo").value.trim();
 
