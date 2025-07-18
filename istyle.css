@@ -1,0 +1,12 @@
+#container{
+    margin: auto;
+    width: 600px;
+}
+
+.item{
+    padding: 8px;
+    margin: 8px;
+    height: 40px;
+    width: auto;
+    background: #eee;
+}
