@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkbox</title>
+</head>
+<body>
+    <label><input type="checkbox" id="consentcheckbox"/> Accept Terms And Conditions</label>
+    <button onclick="getCheckboxValue()">Submit</button>
+    <script>
+        const checkbox = document.getElementById("consentcheckbox");
+        // checkbox.addEventListener("change", (event)=>{
+        //        event.preventDefault();
+        //        if(checkbox.checked){
+        //             console.log("Checkbox Checked")
+        //        }
+        //        else{
+        //             console.log("Checkbox Unchecked")
+        //        }
+        // })
+
+        function getCheckboxValue(){
+            if(checkbox.checked){
+                console.log("Checkbox Checked")
+            }
+            else{
+                console.log("Checkbox Unchecked")
+            }
+        }
+    </script>
+</body>
+</html>

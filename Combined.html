@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select + Dropdown + Checkbox</title>
+</head>
+<body>
+        <input type="text" id="username" placeholder="Enter Your name"/>
+    <select id="country">
+        <option value="India">India</option>
+        <option value="USA">USA</option>
+    </select> </br></br>
+
+    <label><input type="checkbox" id="terms"/>Accept Terms And Conditions</label>
+    <input type="button" onclick="onBtnClick()" value="Submit"> </button>
+</form>
+<!-- <script src="/combined.js" type="module"/> -->
+ <script>
+     function onBtnClick (){
+        const inputValue = document.getElementById("username").value;
+        const selected = document.getElementById("country").value;
+        const checkedValues = document.getElementById("terms").checked;
+            console.log(inputValue)
+            console.log(selected)
+            console.log(checkedValues)
+        }
+        
+ </script>
+</body>
+</html>
+<form id="userForm">

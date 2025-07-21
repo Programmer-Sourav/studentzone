@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+<body>
+    <label>Search By Name</label>
+    <input type="search" placeholder="Search name here..." id="searchbar" value=""/>
+    <div id="result-display">Matching Users List:</div>
+    <script>
+        const users = [{id: 1, username: "Sourav"}, {id: 2, username: "Arindam"}, {id: 3, username: "Srikanta"}, {id: 4, username: "Soumen"}]
+        let result = [];
+        document.getElementById("searchbar").addEventListener("input", (event)=>{
+                    const searched = event.target.value;
+                    if(searched!==""){
+                    result = users.filter((item)=>item.username.toLowerCase().includes(searched.toLowerCase()))
+                    console.log(result);
+                    displayResult(result);
+                    }
+
+        })
+
+        const results = document.getElementById("result-display");
+
+        function displayResult(result){
+             // Clear old results
+            results.innerHTML = '';
+            for(let i = 0 ; i<result.length; i++){
+            const eachItem = document.createElement("listitem")    
+            eachItem.textContent = result[i].username;
+            eachItem.value = result[i].username;
+            results.appendChild(eachItem)
+            }
+        }
+    </script>
+</body>
+</html>

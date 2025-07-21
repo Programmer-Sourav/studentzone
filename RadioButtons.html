@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Buttons</title>
+</head>
+<body>
+    <label>
+        <input type="radio" name="gender" value="Male" checked/> Male
+    </label>
+    <label>
+        <input type="radio" name="gender" value="Female"/> Female
+    </label>
+
+    <script>
+        const radioButtons = document.querySelectorAll('input[name="gender"]');
+        let selectedValue = "";
+        radioButtons.forEach((radioItem)=>{
+            radioItem.addEventListener("change", ()=>{
+            if(radioItem.checked)
+                 selectedValue = radioItem.value;
+                 console.log(4444, selectedValue)
+                })
+        })
+       
+    </script>
+</body>
+</html>

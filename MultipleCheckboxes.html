@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Checkboxes</title>
+</head>
+<body>
+    <h4>Select Your Skills:</h4>
+    <label><input type="checkbox"  name="skills" value="CSS"/> CSS</label>
+    <label><input type="checkbox" name="skills" value="HTML">HTML</label>
+    <label><input type="checkbox" name="skills" value="JAVASCRIPT">JAVASCRIPT</label>
+    <button onclick="getSelectedSkill()">Get Selected Skills</button>
+    <script>
+        function getSelectedSkill(){
+            let selectedValues = [];
+            // if(!selectedValues.includes("CSS"))
+            // selectedValues = [...selectedValues, "CSS"]
+            const checkboxes = document.querySelectorAll('input[name="skills"]');
+            console.log(1233, checkboxes)
+            checkboxes.forEach((checkbox)=>{
+                if(checkbox.checked)
+                   selectedValues  = [...selectedValues, checkbox.value]
+            })
+            console.log("Selected Skills:", selectedValues);
+        }
+    </script>
+</body>
+</html>

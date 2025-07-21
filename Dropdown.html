@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown</title>
+</head>
+<body>
+    <label for="city"> Choose A City</label>
+    <select id="selectcity">
+        <option value="Select">Select</option>
+        <!-- <option value="Delhi">Delhi</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Bangalore">Bangalore</option> -->
+    </select>
+    <button onclick="getSelectedCity()">Submit</button>
+    <script>
+        const data = [{id: 1, city: "Delhi"}, {id: 2, city: "Mumbai"}, {id: 3, city: "Bangalore"}, {id: 4, city: "Kolkata"}]
+        const selectBox = document.getElementById("selectcity")
+
+        data.map((cityItem)=>{
+            const cityElement = document.createElement("option")
+            cityElement.textContent = cityItem.city;
+            cityElement.value = cityItem.city;
+            selectBox.appendChild(cityElement)
+        })
+
+        selectBox.addEventListener("change", (e)=>{
+            e.preventDefault();
+            const selectedValue = selectBox.value;
+
+            setTimeout(()=>{
+                alert("Selected city: " + selectedValue);
+            }, 100)
+            
+        })
+
+      
+        // function getSelectedCity(){
+        //    const selectBox =  document.getElementById("selectcity");
+        //    const selectedValue = selectBox.value;
+        //    alert("Selected city: " + selectedValue);
+        // }
+    </script>
+</body>
+</html>
