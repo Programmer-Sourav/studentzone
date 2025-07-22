@@ -29,7 +29,7 @@ function displayTodos(todos){
             todoItem.appendChild(editButton)
 
             //Delete Button
-            const deleteButton = document.createElement("Delete")
+            const deleteButton = document.createElement("button")
             deleteButton.textContent = "Delete"
             deleteButton.style.marginLeft="10px";
             deleteButton.onclick = () => deleteTodo(index)
