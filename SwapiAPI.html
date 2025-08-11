@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Star Wars Characters</title>
+  <style>
+    #starwarSelectDd {
+      margin-bottom: 20px;
+    }
+    #resultDiv {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+  <select id="starwarSelectDd">
+    <option>--- Select ---</option>
+  </select>
+  <div id="resultDiv">
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Films</th>
+          <th>Vehicles</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td id="films"></td>
+          <td id="vehicles"></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const selectDd = document.getElementById("starwarSelectDd");
+    const filmsTd = document.getElementById("films");
+    const vehiclesTd = document.getElementById("vehicles");
+
+    async function getStarwarsChars(url) {
+      const response = await fetch(url);
+      const responseData = await response.json();
+
+      if (url === "https://swapi.py4e.com/api/people/") {
+        const data = responseData.results;
+
+        data.forEach((element) => {
+          const option = document.createElement("option");
+          option.textContent = element.name;
+          option.value = element.url;
+          selectDd.appendChild(option);
+        });
+
+        selectDd.addEventListener("change", async () => {
+          if (selectDd.value) {
+            await loadCharacterDetails(selectDd.value);
+          }
+        });
+      }
+    }
+
+    async function loadCharacterDetails(characterUrl) {
+      const response = await fetch(characterUrl);
+      const characterData = await response.json();
+
+      // Films
+      const filmTitles = await Promise.all(
+        characterData.films.map(async (filmUrl) => {
+          const res = await fetch(filmUrl);
+          const filmData = await res.json();
+          return filmData.title;
+        })
+      );
+      filmsTd.innerHTML = filmTitles.map((title) => `<div>${title}</div>`).join("");
+
+      // Vehicles
+      const vehicleNames = await Promise.all(
+        characterData.vehicles.map(async (vehUrl) => {
+          const res = await fetch(vehUrl);
+          const vehData = await res.json();
+          return vehData.name;
+        })
+      );
+      vehiclesTd.innerHTML = vehicleNames.length
+        ? vehicleNames.map((v) => `<div>${v}</div>`).join("")
+        : "<div>No vehicles</div>";
+    }
+
+    getStarwarsChars("https://swapi.py4e.com/api/people/");
+  </script>
+</body>
+</html>

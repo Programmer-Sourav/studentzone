@@ -1,0 +1,55 @@
+style placeholder text
+
+ChatGPT said:
+You can style placeholder text in input and textarea fields using the ::placeholder pseudo-element in CSS.
+
+✅ Basic Syntax:
+css
+Copy
+Edit
+::placeholder {
+  property: value;
+}
+🧾 Example:
+html
+Copy
+Edit
+<input type="text" placeholder="Enter your name">
+css
+Copy
+Edit
+input::placeholder {
+  color: gray;
+  font-style: italic;
+  opacity: 0.7;
+}
+🎯 You can use it with different elements:
+css
+Copy
+Edit
+textarea::placeholder {
+  color: #999;
+  font-size: 14px;
+}
+🌐 Browser Compatibility:
+Modern browsers support ::placeholder, but older versions used vendor prefixes. These are mostly obsolete, but for full compatibility:
+
+css
+Copy
+Edit
+input::-webkit-input-placeholder {
+  color: gray;
+}
+
+input::-moz-placeholder {
+  color: gray;
+}
+
+input:-ms-input-placeholder {
+  color: gray;
+}
+
+input::placeholder {
+  color: gray;
+}
+✅ Tip: In 2025, using just ::placeholder is enough for most modern browsers.

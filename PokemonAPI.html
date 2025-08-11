@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemon Select with recursive fetch</title>
+</head>
+
+<body>
+    <select id="pokemon-select">
+        <option value="">---Select---</option>
+    </select>
+    <div id="abilities-container" style="margin-top: 20px;"></div>
+
+    <script>   
+const pokemonSelect = document.getElementById("pokemon-select")
+const abilitiesContainer = document.getElementById("abilities-container")
+
+function fetchData(url){
+    fetch(url).
+    then((response)=>response.json())
+    .then((data)=>{
+        if(url === 'https://pokeapi.co/api/v2/pokemon/'){
+            // Case 1: Initial list
+            pokemonSelect.textContent = '<option value="">-- Select a Pokémon --</option>';
+            data.results.forEach((pokemon)=>{
+                const option = document.createElement("option");
+                option.textContent = pokemon.name;
+                option.value = pokemon.url
+                pokemonSelect.appendChild(option);
+            })
+             // Add listener AFTER options are populated
+
+             pokemonSelect.addEventListener("change", ()=>{
+                if(pokemonSelect.value){
+                    fetchData(pokemonSelect.value)
+                }
+             })
+        }
+        else{
+            // Case 2: Pokémon detail (abilities)
+            const abilities = data.abilities.map((ability)=>ability.ability.name);
+            abilitiesContainer.innerHTML = 
+            `<h3>Abilities of ${data.name} </h3>
+            <ul>${abilities.map((a)=>`<li>${a}</li>`).join('')} </ul>`
+
+        }
+    })
+    .catch((error)=>console.error("Error ", error))
+}
+
+fetchData('https://pokeapi.co/api/v2/pokemon/')
+</script>
+</body>
+</html>

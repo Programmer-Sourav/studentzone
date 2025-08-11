@@ -1,0 +1,49 @@
+
+child Selector
+
+ChatGPT said:
+A child selector in CSS targets elements that are direct children of a specific parent — not deeper nested descendants.
+
+✅ Syntax:
+css
+Copy
+Edit
+parent > child {
+  property: value;
+}
+The > means “direct child only.”
+
+🧾 Example:
+css
+Copy
+Edit
+ul > li {
+  color: red;
+}
+This targets only <li> elements that are immediate children of a <ul>.
+
+🧱 Example HTML:
+html
+Copy
+Edit
+<ul>
+  <li>Red item</li> <!-- matched -->
+  <li>
+    <ul>
+      <li>Not red (nested too deep)</li> <!-- not matched -->
+    </ul>
+  </li>
+</ul>
+🔄 Compare with Descendant Selector:
+css
+Copy
+Edit
+ul li {
+  color: red;
+}
+This would match all <li> elements inside <ul>, at any depth — including nested ones.
+
+Summary:
+Selector	Matches
+ul > li	Only direct children <li> inside <ul>
+ul li	All <li> inside <ul>, even nested ones

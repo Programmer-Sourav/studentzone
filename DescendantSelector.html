@@ -1,0 +1,52 @@
+descendant selector
+
+ChatGPT said:
+A descendant selector in CSS targets elements that are nested inside other elements, no matter how deeply, as long as they are descendants in the HTML hierarchy.
+
+✅ Syntax:
+css
+Copy
+Edit
+ancestor descendant {
+  property: value;
+}
+The first part (ancestor) is the parent or ancestor element.
+
+The second part (descendant) is the element inside it (child, grandchild, etc.).
+
+🧾 Example:
+css
+Copy
+Edit
+div p {
+  color: blue;
+}
+This means any <p> element that is inside a <div> (could be a direct child or nested deeper) will have blue text.
+
+Example HTML:
+html
+Copy
+Edit
+<div>
+  <p>This paragraph is blue.</p>
+  <section>
+    <p>This paragraph is also blue (nested inside div).</p>
+  </section>
+</div>
+
+<p>This paragraph is NOT blue (not inside div).</p>
+Difference from Child Selector (>):
+Descendant selector matches any level deep.
+
+Child selector matches only immediate children.
+
+css
+Copy
+Edit
+div > p {
+  color: red; /* only direct child <p> of <div> */
+}
+Summary:
+Descendant selector = space between selectors
+
+Matches all descendants, no matter how deep

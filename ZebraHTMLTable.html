@@ -1,0 +1,29 @@
+<!DOCTYPE HTML><!-- Specifies the document type and version of HTML -->
+<html lang="en"><!-- Begins the HTML document and sets the language to English -->
+<head>
+<meta charset=utf-8><!-- Sets the character encoding to UTF-8 -->
+<title>HTML CSS exercise - CSS3 Zebra Striping a Table</title><!-- Sets the title of the webpage -->
+<style type="text/css"> /* Begins CSS styling */
+table { /* Styles for the table element */
+border:1px solid silver; /* Sets a border for the table */
+}
+th { /* Styles for table header cells */
+background-color: #ccc; /* Sets the background color of table header cells */
+}
+tbody tr:nth-child(even) { /* Selects even rows in the table body */
+background-color: #abe113; /* Sets the background color for even rows */
+}
+</style>
+</head>
+<body>
+<table><!-- Begins a table -->
+<tr><th>Id</th><th>Name</th><th>Major</th></tr><!-- Table header row -->
+<tr><td>1001</td><td>Gopl Murthy</td><td>Physics</td></tr><!-- Table data rows -->
+<tr><td>1002</td><td>Joy Sen</td><td>Economics</td></tr>
+<tr><td>1003</td><td>Chandu Yadav</td><td>Chemistry</td></tr>
+<tr><td>1004</td><td>Shalini Gupta</td><td>Zoology</td></tr>
+<tr><td>1004</td><td>Vivek Kumar</td><td>Math</td></tr>
+<tr><td>1004</td><td>Sameer Ali</td><td>Botany</td></tr>
+</table><!-- Ends the table -->
+</body>
+</html>

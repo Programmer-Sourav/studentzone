@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Checkbox</title>
+</head>
+<body>
+  <label>Select your Skill</label><br/>
+  <label><input type="checkbox" name="skills" value="HTML"/> HTML</label><br/>
+  <label><input type="checkbox" name="skills" value="CSS"/> CSS</label><br/>
+  <label><input type="checkbox" name="skills" value="JavaScript"/> JavaScript</label><br/>
+  
+  <button onclick="getSelectedValues()">Show Selection</button>
+  <div id="selected-values"></div>
+
+  <script>
+    function getSelectedValues() {
+      const allCheckboxes = document.querySelectorAll('input[name="skills"]');
+      const resultSection = document.getElementById("selected-values");
+
+      const selectedValues = [];
+      allCheckboxes.forEach((item) => {
+        if (item.checked) {
+          selectedValues.push(item.value);
+        }
+      });
+
+      console.log("Selected:", selectedValues);
+      resultSection.innerText = "You selected: " + selectedValues.join(", ");
+    }
+  </script>
+</body>
+</html>

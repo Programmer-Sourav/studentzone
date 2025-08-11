@@ -1,0 +1,22 @@
+How to the second flex-item grow three times wider than the rest?
+
+<div class="container">
+  <div class="item">1</div>
+  <div class="item second">2</div>
+  <div class="item">3</div>
+</div>
+.container {
+  display: flex;
+}
+
+.item {
+  flex-grow: 1; /* default growth for all */
+  background: lightgray;
+  margin: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.second {
+  flex-grow: 3; /* second item grows 3x more */
+}

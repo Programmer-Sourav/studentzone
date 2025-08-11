@@ -1,0 +1,22 @@
+<!doctype html><!-- Declares the document type and version of HTML -->
+<html><!-- Opening tag for the HTML document -->
+<head><!-- Opening tag for the head section which contains metadata -->
+<title>HTML CSS Exercise - Style the element which is not empty</title><!-- Title of the HTML document -->
+<style> /* Opening tag for CSS styling */
+.container { /* Styles for elements with class 'container' */
+background: #5ac4ed; /* Sets the background color to a shade of blue */
+height: 150px; /* Sets the height of the container */
+width: 200px; /* Sets the width of the container */
+margin:10px; /* Sets the margin around the container */
+}
+
+.container:empty { /* Styles for empty elements with class 'container' */
+background: #ec8007; /* Sets the background color to a shade of orange */
+}
+</style><!-- Closing tag for CSS styling -->
+</head><!-- Closing tag for the head section -->
+<body><!-- Opening tag for the body section which contains the content -->
+<div class="container"><!-- I am empty --></div><!-- Empty container div with a comment -->
+<div class="container">I am not empty</div><!-- Container div with text content -->
+</body><!-- Closing tag for the body section -->
+</html><!-- Closing tag for the HTML document -->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Specificity</title>
+    <style>
+        .highlight {
+  color: green;
+}
+p {
+  color: blue;
+}
+p {
+  color: aqua; /* wins */ /*cascading*/
+}
+
+#my-paragraph{
+    color: orange;
+}
+    </style>
+</head>
+<body>
+ <p>This is a paragraph.</p> <!-- Blue from p selector -->
+<p class="highlight">This is a highlighted paragraph.</p> <!-- Green (class > element) -->
+<p id="my-paragraph" class="highlight" style="color: red;">
+  This is a very special paragraph.
+</p> <!-- Red (inline style wins all) -->
+
+</body>
+</html>

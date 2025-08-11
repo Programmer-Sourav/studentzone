@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Speech Bubble</title>
+  <style>
+    .speech-bubble {
+      position: relative;
+      background: #00aabb;
+      color: white;
+      padding: 15px 20px;
+      border-radius: 10px;
+      width: max-content;
+      font-family: sans-serif;
+      font-size: 16px;
+      margin: 50px;
+    }
+
+    .speech-bubble::after {
+      content: "";
+      position: absolute;
+      bottom: -14px; /* Tail appears below bubble */
+      left: 30px;     /* Adjust tail position */
+      border-width: 15px 10px 0;
+      border-style: solid;
+      border-color: #00aabb transparent transparent transparent;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="speech-bubble">
+    Hello! I'm a CSS speech bubble.
+  </div>
+
+</body>
+</html>

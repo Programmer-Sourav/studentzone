@@ -1,0 +1,58 @@
+A type selector in CSS is a basic selector that targets HTML elements by their tag name (also called the element name).
+
+✅ Syntax:
+css
+Copy
+Edit
+element {
+  property: value;
+}
+🧾 Example:
+css
+Copy
+Edit
+p {
+  color: blue;
+  font-size: 16px;
+}
+This applies the style to all <p> elements on the page.
+
+💡 More Examples:
+css
+Copy
+Edit
+h1 {
+  text-align: center;
+}
+
+button {
+  background-color: green;
+  color: white;
+}
+These target all <h1> and <button> tags respectively.
+
+🔁 Common Use:
+Type selectors are often used for base styling, like:
+
+css
+Copy
+Edit
+body {
+  font-family: Arial, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+⚠️ Notes:
+Type selectors are not as specific as class (.class) or ID (#id) selectors.
+
+They can be combined with other selectors:
+
+css
+Copy
+Edit
+div p {
+  color: red; /* targets <p> inside <div> */
+}

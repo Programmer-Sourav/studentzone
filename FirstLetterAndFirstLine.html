@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+<title>HTML CSS Exercise - Style first letter and first line</title><!-- Set the title of the HTML page -->
+<style type="text/css">
+/* CSS styles start here */
+
+.container{
+width:500px; /* Set the width of the container */
+}
+
+p::first-letter{
+color: #4b6c9c; /* Set the color of the first letter of paragraphs */
+font-weight:bold; /* Set the font weight of the first letter to bold */
+font-size:150%; /* Set the font size of the first letter to 150% of the parent font size */
+}
+
+p::first-line{
+color: #5ac4ed; /* Set the color of the first line of paragraphs */
+}
+
+/* CSS styles end here */
+</style>
+</head>
+<body>
+<div class="container"><!-- Create a container div for content -->
+<p>In 1986 the Defense Advanced Research Projects Agency (DARPA), the Army Research Office (ARO), the National Science Foundation (NSF), and ESL, Inc sponsored Berkeley POSTGRES Project which was led by Michael Stonebraker.</p><!-- Add a paragraph with text inside the container -->
+</div>
+</body>
+</html>

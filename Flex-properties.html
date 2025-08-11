@@ -1,0 +1,75 @@
+flex-basis, flex-grow, flex-wrap, flex:1 
+
+ChatGPT said:
+Great! You're diving into Flexbox, a powerful layout system in CSS. Let’s break down the terms you're asking about: flex-basis, flex-grow, flex-wrap, and flex: 1.
+
+🔧 1. flex-basis
+Defines the initial size of a flex item before any remaining space is distributed.
+
+Can be set in px, %, em, etc.
+
+Example:
+css
+Copy
+Edit
+.item {
+  flex-basis: 200px;
+}
+📌 This tells the item to be 200px wide (or tall) before flex-grow or shrink is applied.
+
+🔧 2. flex-grow
+Controls how much a flex item can grow relative to its siblings when there’s extra space.
+
+Example:
+css
+Copy
+Edit
+.item {
+  flex-grow: 2;
+}
+📌 This item will grow twice as much as an item with flex-grow: 1.
+
+🔧 3. flex-wrap
+Tells the container whether to allow items to wrap to the next line if they don’t fit.
+
+Example:
+css
+Copy
+Edit
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+📌 Items will go to a new line instead of squishing into one row.
+
+🔧 4. flex: 1
+This is shorthand for:
+
+css
+Copy
+Edit
+flex-grow: 1;
+flex-shrink: 1;
+flex-basis: 0%;
+So:
+
+css
+Copy
+Edit
+.item {
+  flex: 1;
+}
+📌 The item will:
+
+Grow to fill the container (equal share with others that have flex: 1)
+
+Shrink if necessary
+
+Start from a base size of 0
+
+🧠 Quick Summary Table:
+Property	Purpose
+flex-basis	Initial size before growing/shrinking
+flex-grow	How much item can grow (proportionally)
+flex-wrap	Whether items wrap to next line
+flex: 1	Shorthand: grow (1), shrink (1), basis (0%)

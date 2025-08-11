@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Corner Ribbon</title>
+  <style>
+    .ribbon-wrapper {
+      position: relative;
+      width: 200px;
+      height: 200px;
+      background: #fff; /* Your box content background */
+      border: 1px solid #ccc;
+      margin: 50px;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 60px;
+      left: -20px;
+      transform: rotate(-45deg);
+      background: #a00; /* Deep red background */
+      color: white;
+      padding: 5px 40px;
+      font: bold 14px sans-serif;
+      box-shadow: 0 0 3px rgba(0,0,0,0.3);
+      z-index: 10;
+    }
+
+    /* Optional: make it fancier with border */
+    .ribbon::before,
+    .ribbon::after {
+      content: "";
+      position: absolute;
+      border: 5px solid #800;
+    }
+
+    .ribbon::before {
+      top: 100%;
+      left: 0;
+      border-top-color: transparent;
+      border-left-color: transparent;
+    }
+
+    .ribbon::after {
+      top: 100%;
+      right: 0;
+      border-top-color: transparent;
+      border-right-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="ribbon-wrapper">
+    <div class="ribbon">Best value pack</div>
+  </div>
+</body>
+</html>
